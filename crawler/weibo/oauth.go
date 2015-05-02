@@ -21,7 +21,8 @@ type WeiboAuth struct {
 }
 
 type AccessTokenResult struct {
-	//参考http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E#.E4.BD.BF.E7.94.A8OAuth2.0.E8.B0.83.E7.94.A8API
+	//参考
+	// http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E#.E4.BD.BF.E7.94.A8OAuth2.0.E8.B0.83.E7.94.A8API
 	AccessToken string `json:"access_token"`
 	RemindIn    string `json:"remind_in"`
 	ExpiresIn   int    `json:"expires_in"`
@@ -37,7 +38,7 @@ func (auth *WeiboAuth) getAuthorizeUrl() string {
 }
 
 func (auth *WeiboAuth) GetAccessToken(code string) (AccessTokenResult, error) {
-	//https://api.weibo.com/oauth2/access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
+	// https://api.weibo.com/oauth2/access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
 	params := url.Values{}
 	params.Add("client_id", auth.ClientId)
 	params.Add("client_secret", auth.ClientSecret)
