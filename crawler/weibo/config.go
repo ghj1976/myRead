@@ -2,9 +2,9 @@ package weibo
 
 import (
 	"github.com/BurntSushi/toml"
+	"github.com/kardianos/osext"
 	"log"
 	"os"
-	"osext"
 	"path"
 )
 

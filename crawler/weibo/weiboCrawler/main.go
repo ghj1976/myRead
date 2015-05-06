@@ -30,8 +30,10 @@ func main() {
 	tl, err := weibo.GetMyTimeline(jj.AccessToken)
 	if err != nil {
 		fmt.Println(err)
-	} else {
-		fmt.Println(tl)
+		return
 	}
+
+	fmt.Println(tl)
+	//fmt.Println(len(tl.statuses))
 
 }

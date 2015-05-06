@@ -33,11 +33,21 @@ type tweet struct {
 	comments_count          int
 	attitudes_count         int
 	mlevel                  int
+	visible                 visibleStruct
+	darwin_tag              darwinTagsStruct
+}
+
+type visibleStruct struct {
+	vtype   int `json:"type"`
+	list_id int
+}
+
+type darwinTagsStruct struct {
 }
 
 type WeiboTopic struct {
 	tweet
-	retweeted tweet // 被转发的微博
+	retweeted_status tweet // 被转发的微博
 }
 
 type WeiboTimeline struct {
@@ -62,6 +72,8 @@ func GetMyTimeline(access_token string) (timeline WeiboTimeline, err error) {
 	}
 	WriteFile2ExecutableFolder2("1.txt", bbody)
 	fmt.Println(string(bbody))
+
+	fmt.Println("")
 
 	err = json.Unmarshal(bbody, &timeline)
 	if err != nil {
