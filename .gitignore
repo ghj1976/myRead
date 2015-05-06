@@ -22,3 +22,9 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+crawler/weibo/weiboCrawler/weiboCrawler
+
+*.txt
+
+crawler/weibo/weiboCrawler/config.toml
