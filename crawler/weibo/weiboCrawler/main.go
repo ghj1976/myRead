@@ -15,25 +15,26 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	/*
+		oauth := weibo.WeiboAuth{ClientId: config.AppKey, ClientSecret: config.AppSecret, RedirectUri: "http://www.teaduoduo.com/weibo"}
 
-	oauth := weibo.WeiboAuth{ClientId: config.AppKey, ClientSecret: config.AppSecret, RedirectUri: "http://www.teaduoduo.com/weibo"}
-
-	jj, err := oauth.GetAccessToken(config.Code)
+		jj, err := oauth.GetAccessToken(config.Code)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		config.AccessToken = jj.AccessToken
+	*/
+	// fmt.Println(jj.AccessToken)
+	tl, err := weibo.GetMyTimeline(config.AccessToken)
 	if err != nil {
 		fmt.Println(err)
-		return
-	} else {
-		fmt.Println(jj)
-	}
 
-	fmt.Println(jj.AccessToken)
-	tl, err := weibo.GetMyTimeline(jj.AccessToken)
-	if err != nil {
-		fmt.Println(err)
 		return
 	}
 
 	fmt.Println(tl)
+	fmt.Println(tl.ErrorCode)
 	//fmt.Println(len(tl.statuses))
 
 }

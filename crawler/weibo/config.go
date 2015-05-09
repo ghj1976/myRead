@@ -10,9 +10,10 @@ import (
 
 // 微博开放平台的配置参数
 type WeiboOpenAPIConfig struct {
-	AppKey    string `toml:"key"`
-	AppSecret string `toml:"secret"`
-	Code      string `toml:"code"`
+	AppKey      string `toml:"key"`
+	AppSecret   string `toml:"secret"`
+	Code        string `toml:"code"`
+	AccessToken string `tom:"token"`
 }
 
 // 给指定位置文件写TOML文件
@@ -44,8 +45,9 @@ func InitConfigFile() {
 	// Code 应用授权码
 	// 参考 http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E#.E4.BD.BF.E7.94.A8OAuth2.0.E8.B0.83.E7.94.A8API
 	config = WeiboOpenAPIConfig{AppKey: "AppKey",
-		AppSecret: "AppSecret",
-		Code:      "96dc8ae47a6960674f87af99a50687d4"}
+		AppSecret:   "AppSecret",
+		Code:        "96dc8ae47a6960674f87af99a50687d4",
+		AccessToken: "2.00QsbwWBLHMJbB51389d558dkYqpeD"}
 
 	dir, err := osext.ExecutableFolder()
 	if err != nil {
