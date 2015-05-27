@@ -35,6 +35,20 @@ func WriteTOMLFile(fileName string, obj interface{}) {
 	}
 }
 
+// 初始化一个对象到toml的短文件名
+func InitTomlShortFileName(shortFileName string, obj interface{}) {
+	dir, err := osext.ExecutableFolder()
+	if err != nil {
+		log.Println("osext.ExecutableFolder()", err)
+	}
+
+	filename := path.Join(dir, shortFileName)
+	log.Println(filename)
+
+	WriteTOMLFile(filename, obj)
+
+}
+
 // 初始化配置文件
 func InitConfigFile() {
 
@@ -49,13 +63,5 @@ func InitConfigFile() {
 		Code:        "96dc8ae47a6960674f87af99a50687d4",
 		AccessToken: "2.00QsbwWBLHMJbB51389d558dkYqpeD"}
 
-	dir, err := osext.ExecutableFolder()
-	if err != nil {
-		log.Println("osext.ExecutableFolder()", err)
-	}
-
-	filename := path.Join(dir, "config.toml")
-	log.Println(filename)
-
-	WriteTOMLFile(filename, config)
+	InitTomlShortFileName("config.toml", config)
 }

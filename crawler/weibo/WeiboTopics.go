@@ -9,7 +9,7 @@ import (
 // 微博内容相关的实体类
 type tweet struct {
 	CreateAt           time.Time        `json:"create_at"`               // 发表时间 微博创建时间
-	Id                 int64            `json"id"`                       // 编号 微博ID
+	Id                 int64            `json:"id"`                      // 编号 微博ID
 	Mid                string           `json:"mid"`                     //
 	Idstr              string           `json:"idstr"`                   //
 	Text               string           `json:"text"`                    // 内容 微博信息内容
