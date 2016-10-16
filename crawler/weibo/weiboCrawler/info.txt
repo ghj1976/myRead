@@ -1,0 +1,15 @@
+
+
+
+https://api.weibo.com/oauth2/authorize?client_id=1465048789&response_type=code&redirect_uri=http://www.teaduoduo.com/weibo
+
+
+
+
+2015/02/12 22:01:05 body:{"access_token":"2.00QsbwWBLHMJbB51389d558dkYqpeD","remind_in":"157679999","expires_in":157679999,"uid":"1402944200"}
+
+{2.00QsbwWBLHMJbB51389d558dkYqpeD 157679999 157679999 1402944200}
+
+
+
+https://api.weibo.com/2/statuses/user_timeline.json?access_token=2.00QsbwWBLHMJbB51389d558dkYqpeD&uid=1402944200
